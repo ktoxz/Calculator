@@ -1,9 +1,12 @@
 import React from 'react';
 import Cal from './Cal';
-const Screen = (calc, res) => {
+function Screen({ calc, result }) {
     return (
-        <div id="screen">0</div>
+        <div className="screen">
+            {result ? <span>({result})</span> : ""}
+            {calc || "0"}
+        </div>
     );
-};
+}
 
 export default Screen;
