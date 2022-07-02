@@ -1,9 +1,9 @@
 
 import { useState } from 'react'
 import './App.css'
-
+var isSqrt = false;
 function App() {
-  var isSqrt = false;
+  
   const [Calc, setCalc] = useState("");
   const [Res, setRes] = useState("");
 
@@ -21,7 +21,7 @@ function App() {
 };
 
   const updateCalc = value =>{
-    console.log(Calc.slice(-4));
+    
     if (
         (opS.includes(value) && Calc === "") ||
         (opS.includes(value) && opS.includes(Calc.slice(-1)))
@@ -46,7 +46,15 @@ function App() {
   }
 
   const updateSqrt = () => {
-    updateCalc('sqrt(');
+    
+    if(isSqrt==false){
+      updateCalc('Math.sqrt(');
+      isSqrt = true;
+    } else if (isSqrt == true ){
+      updateCalc(')');
+      isSqrt = false;
+    }
+    
 
 
   }
@@ -83,8 +91,7 @@ function App() {
         <button onClick={resetAll}>E</button>
       </div>
       <div>
-        <button onClick={() => updateCalc('Math.sqrt(')}>sqrt(x)</button>
-        <button onClick={() => updateCalc(')')}>)</button>
+        <button onClick={updateSqrt}>sqrt(x)</button>
       </div>
     </div>
 
