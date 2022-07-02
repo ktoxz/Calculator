@@ -1,7 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Operator from './Operator'
-import Cal from './component/Cal'
 import App from './App'
 import './index.css'
 
