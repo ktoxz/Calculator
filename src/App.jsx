@@ -21,7 +21,7 @@ function App() {
 };
 
   const updateCalc = value =>{
-    console.log(value);
+    console.log(Calc.slice(-4));
     if (
         (opS.includes(value) && Calc === "") ||
         (opS.includes(value) && opS.includes(Calc.slice(-1)))
@@ -83,7 +83,8 @@ function App() {
         <button onClick={resetAll}>E</button>
       </div>
       <div>
-        <button onClick={() => updateCalc('sqrt(')}>sqrt(x)</button>
+        <button onClick={() => updateCalc('Math.sqrt(')}>sqrt(x)</button>
+        <button onClick={() => updateCalc(')')}>)</button>
       </div>
     </div>
 
