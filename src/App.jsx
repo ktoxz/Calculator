@@ -5,7 +5,8 @@ import Screen from './component/Screen'
 function App() {
   return(
     <div>
-      <Screen/>
+
+      <Cal></Cal>
     </div>
   )
 }
